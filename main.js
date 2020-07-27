@@ -19,6 +19,13 @@ const getStudentByName = function(name) {
   return -1;
 }
 
+const graduateStudent = function(name) {
+  const mutator = data.students;
+  const student = getStudentByName(name);
+  student.term = student.term + 1;
+  fs.writeFileSync('../students.json', JSON.stringify(data));
+}
+
 
 if (typeof getStudentByIndex === 'undefined') {
   getStudentByIndex = undefined;
